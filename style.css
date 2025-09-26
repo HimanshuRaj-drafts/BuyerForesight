@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sea: #08b4a3;
+    --blue: #3e5e9d;
+    --off: #efefef;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Montserrat";
+}
+
+nav {
+    height: 8.5vw;
+    width: 100%;
+    background-color: #360081;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.navlogo img {
+    width: 15vw;
+    cursor: pointer;
+}
+
+.navmenu {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.navmenu h4 {
+    padding: 0.5vw 1vw;
+    font-size: 1.2vw;
+    font-weight: 500;
+    margin: 0 0.5vw;
+}
+
+.navmenu h4 .up {
+    display: none;
+}
+
+.navmenu h4:hover {
+    cursor: pointer;
+}
+
+.navbutton {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2vw;
+}
+
+.navbutton button {
+    padding: 0.5vw 0;
+    width: 95%;
+    cursor: pointer;
+    border-radius: 0.3vw;
+    border: none;
+    background-color: var(--sea);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4vw;
+    transition: all 0.2s ease;
+}
+
+.navbutton button:hover {
+    background-color: #ffefe7;
+    color: var(--sea);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-image: url(https://images.unsplash.com/photo-1522679056866-8dbbc8774a9d?q=80&w=1247&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    transition: all .5s ease-in-out;
+    display: flex;
+}
+
+.cont1 {
+    width: 60%;
+    height: 81.8%;
+    margin-top: 8.5vw;
+    padding: 5vw;
+}
+
+.cont1 h1 {
+    font-size: 4vw;
+    text-transform: uppercase;
+}
+
+.cont1 p {
+    padding-top: 2vw;
+    font-size: 1.5vw;
+}
+
+.cont1 button {
+    margin-top: 2.5vw;
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    border: none;
+    background-color: #360081;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: all ease-in-out 0.1s;
+    color: white;
+
+}
+
+.cont1 button:hover {
+    padding: 1.1vw 2.1vw;
+    background-color: rgba(255, 255, 255, 0.621);
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+        border: 2px solid white;
+}
+
+.cont2 {
+    width: 50%;
+    height: 100%;
+}
+
+#page2 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#moving-div {
+    margin-top: 2vw;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    white-space: nowrap;
+    padding: 1.2vw;
+    overflow: hidden;
+
+}
+
+#moving-div .move {
+    display: inline-block;
+    animation: mobe 14s linear infinite;
+}
+
+#moving-div .move img {
+    height: 6vw;
+    margin: 0 1.2vw;
+}
+
+#moving-div .move img:hover {
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+@keyframes mobe {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#blur-left {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to left, transparent, #fff);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+#blur-right {
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(to right, transparent, #fff);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
