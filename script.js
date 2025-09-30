@@ -117,8 +117,8 @@ function counters() {
     })
 }
 function sclTig() {
-    var sl = gsap.timeline()
-    sl.from(".card-cont .card", {
+
+    gsap.from(".card-cont .card", {
         y: 100,
         opacity: 0,
         stagger: 0.4,
@@ -131,10 +131,32 @@ function sclTig() {
             // markers: { startColor: "green", endColor: "red", fontSize: "12px" }
         }
     })
+
+    var pl = gsap.timeline()
+
+    pl.from(".p4heading", {
+        y:"20%",
+
+    })
+
+    pl.from(".square", {
+        y: "30%",
+        opacity: 0,
+        scrollTrigger: {
+            trigger: ".square",
+            scroller: "#main",
+            start: "-150% 30%",
+            end:"50% 80%",
+            markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+            scrub:1
+        }
+    })
+
 }
 
 
 locomo()
 navAni()
-counters() 
+counters()
 sclTig()
+
