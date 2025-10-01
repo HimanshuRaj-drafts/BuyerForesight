@@ -135,27 +135,28 @@ function sclTig() {
     var pl = gsap.timeline()
 
     pl.from(".p4heading", {
-        y:"20%",
+        y: "20%",
 
     })
 
-    pl.from(".square", {
+    pl.from(".square-cont .square", {
         y: "30%",
         opacity: 0,
+        stagger: 0.1,
         scrollTrigger: {
-            trigger: ".square",
+            trigger: ".square-cont .square ",
             scroller: "#main",
             start: "-150% 30%",
-            end:"50% 80%",
-            markers: { startColor: "green", endColor: "red", fontSize: "12px" },
-            scrub:1
+            end: "50% 80%",
+            // markers: { startColor: "green", endColor: "red", fontSize: "12px" },
+            scrub: 1,
         }
     })
 
 }
 
 
-locomo()
+// locomo()
 navAni()
 counters()
 sclTig()
