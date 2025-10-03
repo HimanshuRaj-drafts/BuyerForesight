@@ -442,48 +442,81 @@ nav {
 
 .square:hover .sq-hover {
     top: 0%;
-    cursor:default;
+    cursor: default;
 }
 
 #page5 {
     width: 100%;
-    height: 100vh;
-    background-color: #84ed48;
+    height: fit-content;
 }
 
-.review-container{
-    background-color: #4400A5;
+.carousel {
+    position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: flex-start;
+    overflow: hidden;
 }
 
-.reviews{
-    background-color: #5decdd;
+.carousel-track {
+    display: flex;
+    /* align-items: flex-start; */
+    transition: transform 0.3s ease-in-out;
+}
+
+.slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4vw;
+    padding: 1vw 4vw;
     margin-right: 3vw;
     height: 50%;
-    width: 95%;
-    flex:0 0 auto;
+    width: 95.3%;
+    flex: 0 0 auto;
     transform: translateX(2.5%);
     transition: all 1s linear;
 }
 
-.review-container:hover .reviews{
-/* 
-    transform: translateX(-200%); */
-}
 
-.reviews img{
+.slide img {
     width: 18vw;
     padding: 2vw;
 }
 
-.reviews p{
+.slide p {
     font-size: 1.5vw;
     margin-top: 1vw;
+}
+
+
+.carousel button {
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    /* margin: 0 1vw; */
+    padding: 1vw;
+    border-radius: 10px;
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    z-index: 10;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    z-index: 10;
+}
+
+
+#page6 {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
 }
