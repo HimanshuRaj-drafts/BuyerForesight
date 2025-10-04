@@ -154,31 +154,32 @@ function sclTig() {
     })
 
 }
+function coroani() {
+    const track = document.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
 
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(${-index * 98.3}%)`; // 95% = slide width
+    }
+    // Next
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        updateCarousel();
+    });
+
+    // Prev
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+}
 
 locomo()
 navAni()
 counters()
 sclTig()
-
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
-let index = 0;
-
-function updateCarousel() {
-    track.style.transform = `translateX(${-index * 98.3}%)`; // 95% = slide width
-}
-// Next
-nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    updateCarousel();
-});
-
-// Prev
-prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
+// coroani()
