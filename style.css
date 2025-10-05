@@ -19,6 +19,31 @@ body {
     font-family: "Montserrat";
 }
 
+/* .loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader svg{
+    width: 25vw;
+    fill: none;
+    stroke: black;
+    stroke-width: 0.5px;
+    stroke-dasharray: 500;
+    animation: svganimation 10s ease-in-out;
+}
+
+@keyframes svganimation {
+    0%{
+        stroke-dashoffset: 500;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+} */
+
+
 nav {
     height: 7vw;
     width: 100%;
@@ -448,7 +473,8 @@ nav {
 #page5 {
     width: 100%;
     height: fit-content;
-    background-color: #f1f1f1;
+    background-color: #4400A5;
+    color: white;
 }
 
 .carousel {
@@ -456,12 +482,10 @@ nav {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    margin-bottom: 15vh;
 }
 
 .carousel-track {
     display: flex;
-    /* align-items: flex-start; */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -485,7 +509,7 @@ nav {
 }
 
 .slide p {
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     margin-top: 1vw;
 }
 
@@ -497,7 +521,6 @@ nav {
     color: white;
     font-size: 2rem;
     cursor: pointer;
-    /* margin: 0 1vw; */
     padding: 1vw;
     border-radius: 10px;
 }
@@ -516,6 +539,33 @@ nav {
     z-index: 10;
 }
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 5vw;
+    padding-bottom: 1vw;
+}
+
+.carousel-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-dots button.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.carousel-dots button:hover {
+    background: #ffffffa9;
+}
 
 #page6 {
     background-color: #050505;

@@ -155,31 +155,115 @@ function sclTig() {
 
 }
 function coroani() {
-    const track = document.querySelector(".carousel-track");
-    const slides = Array.from(track.children);
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
 
-    let index = 0;
+    const track = document.querySelector('.carousel-track');
+    let slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
 
-    function updateCarousel() {
-        track.style.transform = `translateX(${-index * 98.3}%)`; // 95% = slide width
+    let currentIndex = 1;
+
+    // Clone first & last slides for infinite effect
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    firstClone.classList.add('clone');
+    lastClone.classList.add('clone');
+    track.appendChild(firstClone);
+    track.prepend(lastClone);
+
+    // Refresh slides array (with clones)
+    slides = Array.from(track.children);
+
+    // ✅ Function: get exact pixel offset for any slide
+    function getSlideOffset(index) {
+        return slides[index].offsetLeft - slides[0].offsetLeft;
     }
-    // Next
-    nextBtn.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        updateCarousel();
+
+    // ✅ Function: apply the transform smoothly
+    function moveToSlide() {
+        track.style.transition = 'transform 0.6s ease-in-out';
+        track.style.transform = `translateX(-${getSlideOffset(currentIndex)}px)`;
+    }
+
+    // ✅ Set initial slide position
+    function goToInitial() {
+        track.style.transition = 'none';
+        track.style.transform = `translateX(-${getSlideOffset(currentIndex)}px)`;
+    }
+    goToInitial();
+
+    // ✅ Handle next & prev buttons
+    nextButton.addEventListener('click', () => {
+        if (currentIndex >= slides.length - 1) return;
+        currentIndex++;
+        moveToSlide();
     });
 
-    // Prev
-    prevBtn.addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        updateCarousel();
+    prevButton.addEventListener('click', () => {
+        if (currentIndex <= 0) return;
+        currentIndex--;
+        moveToSlide();
     });
+
+    // ✅ Handle infinite loop reset (no flicker)
+    track.addEventListener('transitionend', () => {
+        if (slides[currentIndex].classList.contains('clone')) {
+            track.style.transition = 'none';
+            if (currentIndex === slides.length - 1) {
+                currentIndex = 1;
+            } else if (currentIndex === 0) {
+                currentIndex = slides.length - 2;
+            }
+            track.style.transform = `translateX(-${getSlideOffset(currentIndex)}px)`;
+        }
+    });
+
+    // ✅ Handle browser resize (realigns slides)
+    window.addEventListener('resize', () => {
+        goToInitial();
+    });
+
+    // ===== DOT NAVIGATION =====
+    const dotsContainer = document.querySelector('.carousel-dots');
+    const realSlidesCount = slides.length - 2; // exclude clones
+    let dots = [];
+
+    // Create dots
+    for (let i = 0; i < realSlidesCount; i++) {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+
+        dot.addEventListener('click', () => {
+            currentIndex = i + 1; // offset for clone at start
+            moveToSlide();
+            updateDots();
+        });
+    }
+
+    // Update dot styles
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove('active'));
+        const realIndex = currentIndex - 1;
+        if (realIndex >= 0 && realIndex < dots.length) {
+            dots[realIndex].classList.add('active');
+        } else if (currentIndex === 0) {
+            dots[dots.length - 1].classList.add('active');
+        } else if (currentIndex === slides.length - 1) {
+            dots[0].classList.add('active');
+        }
+    }
+
+
+
+    // Update dots after every transition
+    track.addEventListener('transitionend', updateDots);
+
 }
 
 locomo()
 navAni()
 counters()
 sclTig()
-// coroani()
+coroani()
