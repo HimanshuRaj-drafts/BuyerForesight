@@ -19,29 +19,36 @@ body {
     font-family: "Montserrat";
 }
 
-/* .loader{
+.loader {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #18003B;
+background: -webkit-linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
+background: -moz-linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
+background: linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#18003B", endColorstr="#18003B", GradientType=1);
 }
 
-.loader svg{
-    width: 25vw;
+.loader svg {
+    width: 220px;
+    height: auto;
+}
+
+.wave {
+    fill: white;
+}
+
+.outline {
     fill: none;
-    stroke: black;
-    stroke-width: 0.5px;
-    stroke-dasharray: 500;
-    animation: svganimation 10s ease-in-out;
+    stroke: none;
 }
 
-@keyframes svganimation {
-    0%{
-        stroke-dashoffset: 500;
-    }
-    100%{
-        stroke-dashoffset: 0;
-    }
-} */
+
+
+/* hahaahaahhaahahahah */
 
 
 nav {
@@ -516,13 +523,18 @@ nav {
 
 .carousel button {
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: none;
     border: none;
     color: white;
     font-size: 2rem;
     cursor: pointer;
     padding: 1vw;
-    border-radius: 10px;
+    border-radius: 50px;
+    margin: 0.5vw;
+}
+
+.carousel button:hover {
+    background-color: #00000022;
 }
 
 .prev {

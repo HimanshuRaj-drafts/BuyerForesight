@@ -267,3 +267,24 @@ navAni()
 counters()
 sclTig()
 coroani()
+
+const maskRect = document.getElementById("maskRect");
+const totalHeight = 62;
+
+let frame = 0;
+const totalFrames = 80; // duration
+
+function animate() {
+  frame++;
+  const progress = Math.min(frame / totalFrames, 1);
+
+  // Anchor at bottom, increase height
+  maskRect.setAttribute("y", totalHeight * (1 - progress));
+  maskRect.setAttribute("height", totalHeight * progress);
+
+  if (progress < 1) {
+    requestAnimationFrame(animate);
+  }
+}
+
+animate();
