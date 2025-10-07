@@ -34,6 +34,7 @@ function locomo() {
     ScrollTrigger.refresh();
 }
 function navAni() {
+
     var tl = gsap.timeline()
 
     tl.from(".navlogo", {
@@ -261,30 +262,65 @@ function coroani() {
     track.addEventListener('transitionend', updateDots);
 
 }
+function loader() {
+    const maskRect = document.getElementById("maskRect");
+    const totalHeight = 62;
+
+    let frame = 0;
+    const totalFrames = 90; // duration
+
+    function animate() {
+        frame++;
+        const progress = Math.min(frame / totalFrames, 1);
+
+        // Anchor at bottom, increase height
+        maskRect.setAttribute("y", totalHeight * (1 - progress));
+        maskRect.setAttribute("height", totalHeight * progress);
+
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    animate();
+
+
+    setTimeout(() => {
+        document.querySelector(".loader").style.opacity = "0";
+    }, 2000);
+
+
+}
+
 
 locomo()
-navAni()
+
+setTimeout(() => {
+    navAni()
+}, 2000);
+
 counters()
 sclTig()
 coroani()
+loader()
 
-const maskRect = document.getElementById("maskRect");
-const totalHeight = 62;
 
-let frame = 0;
-const totalFrames = 80; // duration
 
-function animate() {
-  frame++;
-  const progress = Math.min(frame / totalFrames, 1);
+// responsive banne ke liye
 
-  // Anchor at bottom, increase height
-  maskRect.setAttribute("y", totalHeight * (1 - progress));
-  maskRect.setAttribute("height", totalHeight * progress);
+// const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-  if (progress < 1) {
-    requestAnimationFrame(animate);
-  }
-}
+// function handleTabletChange(e) {
+//   if (e.matches) {
+//     // Screen width is 768px or less
+//     console.log("You’re on mobile/tablet 🧠");
+//   } else {
+//     console.log("Big screen vibes 💻");
+//   }
+// }
 
-animate();
+// // Initial check
+// handleTabletChange(mediaQuery);
+
+// // Event listener for live updates
+// mediaQuery.addEventListener("change", handleTabletChange);

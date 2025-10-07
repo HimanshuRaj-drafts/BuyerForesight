@@ -25,11 +25,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #18003B;
-background: -webkit-linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
-background: -moz-linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
-background: linear-gradient(90deg, rgba(24, 0, 59, 1) 0%, rgba(41, 0, 99, 1) 51%, rgba(24, 0, 59, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#18003B", endColorstr="#18003B", GradientType=1);
+    background-color: #360081;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+     transition: opacity 0.3s linear;
 }
 
 .loader svg {
