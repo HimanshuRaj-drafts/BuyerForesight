@@ -29,7 +29,7 @@ body {
     position: absolute;
     top: 0;
     z-index: 100;
-     transition: opacity 0.3s linear;
+    transition: all 0.3s linear;
 }
 
 .loader svg {
@@ -125,6 +125,14 @@ nav {
     font-size: 1vw;
 }
 
+
+.phnbtn img {
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    display: none;
+}
+
 #page1 {
     height: 100vh;
     width: 100%;
@@ -134,6 +142,8 @@ nav {
     transition: all .5s ease-in-out;
     display: flex;
     color: white;
+    z-index: 1;
+    position: relative;
 }
 
 .cont1 {
@@ -175,10 +185,6 @@ nav {
     border: 2px solid white;
 }
 
-.cont2 {
-    width: 50%;
-    height: 100%;
-}
 
 #page2 {
     width: 100%;
@@ -250,11 +256,10 @@ nav {
     align-items: center;
     padding: 1vw;
     margin-top: 1vw;
-    /* background-color: crimson; */
 }
 
 .card {
-    height: 100%;
+    height: 60vh;
     width: 22%;
     border: 2px solid #dadada;
     border-radius: 10px;
@@ -651,3 +656,484 @@ nav {
     color: #E6006B;
     cursor: pointer;
 }
+
+/* responsiveness */
+
+/*Phones, portrait*/
+@media (max-width: 480px) {
+
+    nav {
+        height: 10vh;
+    }
+
+    .navlogo img {
+        width: 30vw;
+        cursor: pointer;
+    }
+
+    .navmenu {
+        display: none;
+    }
+
+    .navbutton {
+        display: none;
+    }
+
+    .phnbtn img {
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        display: block;
+    }
+
+    .tup {
+        opacity: 0;
+    }
+
+    .card-cont {
+        height: 65vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1vw;
+        margin-top: 1vw;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        height: 30vh;
+        width: 45%;
+        border: 2px solid #dadada;
+        border-radius: 10px;
+        overflow: hidden !important;
+        box-shadow: 3px 9px 10px 0px #696969bc;
+    }
+
+
+    .card .icon1 {
+        width: 10vw;
+        height: 10vw;
+        padding: 0.5vw;
+    }
+
+    .card .icon {
+        width: 11vw;
+        height: 11vw;
+        padding: 0.5vw;
+    }
+
+    .card h2 {
+        font-size: 4.5vw;
+        padding: 2vw 0 1vw 0;
+    }
+
+    .card p {
+        font-size: 2.5vw;
+        padding: 1vw 0;
+    }
+
+    .card:hover .hovinfo {
+        transform: translateY(-50%);
+    }
+
+    .card:hover .hovinfospe {
+        transform: translateY(-45%);
+    }
+
+
+    .hovinfo {
+        background-color: #360081;
+        width: 100%;
+        height: 150%;
+        transform: translateY(32%);
+        transition: all 0.4s ease-in-out;
+        padding: 5vw;
+        color: white;
+    }
+
+    .hovinfo button {
+        margin-top: 1vw;
+        font-size: 3vw;
+        padding: 0.5vw 1vw;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: #08b4a3;
+        color: white;
+        transition: all 0.1s linear;
+    }
+
+    .hovinfo button:hover {
+        background-color: #5decdd;
+        color: #360081;
+    }
+
+    #moving-div .move img {
+        height: 10vw;
+    }
+
+    /* page1 */
+    #page1 {
+        height: 80vh;
+        background-position: 95% 50%;
+    }
+
+    .cont1 {
+        width: 100%;
+        height: 100%;
+        padding: 22vw 5vw 0;
+    }
+
+    .cont1 h1 {
+        font-size: 10vw;
+    }
+
+    .cont1 p {
+        padding-top: 2vw;
+        font-size: 5vw;
+        color: #ffffff;
+    }
+
+    .cont1 button {
+        margin-top: 3vw;
+        font-size: 4vw;
+        padding: 2vw 3vw;
+        border-radius: 50px;
+        font-weight: 700;
+        transition: all ease-in-out 0.1s;
+        color: #4400A5;
+    }
+
+
+    .cont1 button:hover {
+        padding: 2.1vw 3.1vw;
+    }
+
+    #page2 {
+        width: 100%;
+        height: fit-content;
+    }
+
+    /* page 3 */
+
+    .page3 {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .counters-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        height: 5vh;
+        margin-top: 10vh;
+    }
+
+    .counter-box {
+        height: 20vh;
+        width: 15%;
+        padding: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .counter-box h1 {
+        font-size: 6vw;
+    }
+
+    .counter-box p {
+        font-size: 3vw;
+    }
+
+/* 3rd lilililil */
+
+    .sndinfo {
+        margin: 0vw 0 0vw;
+    }
+
+    .p3-l {
+        width: 0%;
+        height: 100%;
+    }
+
+    .p3-r {
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+        color: white;
+    }
+
+
+    .p3-r h1 {
+        font-size: 10vw;
+    }
+
+    .p3-r p {
+        padding-top: 2vw;
+        font-size: 4vw;
+        color: #ffffff;
+    }
+
+    .p3-r button {
+        font-size: 4vw;
+    }
+
+    .p3-r button:hover {
+        padding: 1.1vw 2.1vw;
+        background-color: rgba(0, 0, 0, 0.233);
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        border: 2px solid white;
+    }
+
+
+}
+
+/*Phones landscape*/
+@media (min-width: 481px) and (max-width: 767px) {
+    nav {
+        height: 10vh;
+    }
+
+    .navlogo img {
+        width: 30vw;
+        cursor: pointer;
+    }
+
+    .navmenu {
+        display: none;
+    }
+
+    .navbutton {
+        display: none;
+    }
+
+    .phnbtn img {
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        display: block;
+    }
+
+    .tup {
+        opacity: 0;
+    }
+
+    .card-cont {
+        height: 65vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1vw;
+        margin-top: 1vw;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        height: 30vh;
+        width: 45%;
+        border: 2px solid #dadada;
+        border-radius: 10px;
+        overflow: hidden !important;
+        box-shadow: 3px 9px 10px 0px #696969bc;
+    }
+
+
+    .card .icon1 {
+        width: 10vw;
+        height: 10vw;
+        padding: 0.5vw;
+    }
+
+    .card .icon {
+        width: 11vw;
+        height: 11vw;
+        padding: 0.5vw;
+    }
+
+    .card h2 {
+        font-size: 4.5vw;
+        padding: 2vw 0 1vw 0;
+    }
+
+    .card p {
+        font-size: 2.5vw;
+        padding: 1vw 0;
+    }
+
+    .card:hover .hovinfo {
+        transform: translateY(-50%);
+    }
+
+    .card:hover .hovinfospe {
+        transform: translateY(-45%);
+    }
+
+
+    .hovinfo {
+        background-color: #360081;
+        width: 100%;
+        height: 150%;
+        transform: translateY(32%);
+        transition: all 0.4s ease-in-out;
+        padding: 5vw;
+        color: white;
+    }
+
+    .hovinfo button {
+        margin-top: 1vw;
+        font-size: 3vw;
+        padding: 0.5vw 1vw;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: #08b4a3;
+        color: white;
+        transition: all 0.1s linear;
+    }
+
+    .hovinfo button:hover {
+        background-color: #5decdd;
+        color: #360081;
+    }
+
+    #moving-div .move img {
+        height: 10vw;
+    }
+
+    /* page1 */
+    #page1 {
+        height: 80vh;
+        background-position: 95% 50%;
+    }
+
+    .cont1 {
+        width: 100%;
+        height: 100%;
+        padding: 22vw 5vw 0;
+    }
+
+    .cont1 h1 {
+        font-size: 10vw;
+    }
+
+    .cont1 p {
+        padding-top: 2vw;
+        font-size: 5vw;
+        color: #ffffff;
+    }
+
+    .cont1 button {
+        margin-top: 3vw;
+        font-size: 4vw;
+        padding: 2vw 3vw;
+        border-radius: 50px;
+        font-weight: 700;
+        transition: all ease-in-out 0.1s;
+        color: #4400A5;
+    }
+
+
+    .cont1 button:hover {
+        padding: 2.1vw 3.1vw;
+    }
+
+    #page2 {
+        width: 100%;
+        height: fit-content;
+    }
+
+    /* page 3 */
+
+    .page3 {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .counters-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+        height: 5vh;
+        margin-top: 10vh;
+    }
+
+    .counter-box {
+        height: 20vh;
+        width: 15%;
+        padding: 2vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .counter-box h1 {
+        font-size: 6vw;
+    }
+
+    .counter-box p {
+        font-size: 3vw;
+    }
+
+/* 3rd lilililil */
+
+    .sndinfo {
+        margin: 0vw 0 0vw;
+    }
+
+    .p3-l {
+        width: 0%;
+        height: 100%;
+    }
+
+    .p3-r {
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+        color: white;
+    }
+
+
+    .p3-r h1 {
+        font-size: 10vw;
+    }
+
+    .p3-r p {
+        padding-top: 2vw;
+        font-size: 4vw;
+        color: #ffffff;
+    }
+
+    .p3-r button {
+        font-size: 4vw;
+    }
+
+    .p3-r button:hover {
+        padding: 1.1vw 2.1vw;
+        background-color: rgba(0, 0, 0, 0.233);
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        border: 2px solid white;
+    }
+}
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1023px) {}
+
+/*Small laptops / desktops*/
+@media (min-width: 1024px) and (max-width: 1279px) {}
+
+/*Desktops & wide screens*/
+@media (min-width: 1280px) and (max-width: 1535px) {}
+
+/*Big monitors*/
+@media (min-width: 1536px) {}
